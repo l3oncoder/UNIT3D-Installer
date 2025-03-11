@@ -69,13 +69,6 @@ add_pkgs() {
     systemctl -q enable --now redis-server
     systemctl is-active --quiet redis-server && echo -e "$IGreen OK $Color_Off"||echo -e "$IRed NOK $Color_Off"
 
-    # PHP Redis
-    echo -e "\n$Cyan Installing PHP Redis ... $Color_Off"
-
-    printf "\n" | pecl install redis > /dev/null
-
-    echo -e "$IGreen OK $Color_Off"
-
     # Update Dependencies
     echo -e "\n$Cyan Updating Dependencies ... $Color_Off"
 
